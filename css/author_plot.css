@@ -1,0 +1,441 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexming.css);
+
+  /* font-family: 'cwTeXMing', serif;
+  src:url(/css/哥特宋.ttf);
+  font-weight: bold; */
+
+html {
+    width: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+body {
+    background-image: url("../HP_image/a04.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+/* .audio { display:none;} */
+/* .carousel{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+} */
+
+/* Hamburger */
+:root {
+  --overlay-color: rgba(40, 29, 19, 0.85);
+  --menu-speed: 0.75s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.showcase {
+  background: var(--primary-color);
+  color: #fff;
+  height: 0vh;
+  position: relative;
+}
+
+.showcase:before {
+  content: '';
+  background: url('') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.showcase .showcase-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.showcase h1 {
+  font-size: 4rem;
+}
+
+.showcase p {
+  font-size: 1.3rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  transition: opacity 1s ease-in-out;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* MENU STYLES */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: rgb(128, 82, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu>div>div>ul>li:hover {
+  list-style: none;
+  color: rgb(255, 247, 137);
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+  
+/*作者*/
+.img_wrapper{
+    width: 300px;
+    height:300px;
+    margin: 0 auto;
+    margin-top:100px;
+    margin-bottom:50px;
+    /* background-position: center;  */
+    object-fit: cover; 
+    object-position: center;
+    border:15px rgb(125, 90, 52) solid;
+    border-radius: 50%; 
+    overflow: hidden;
+    transition: 1s;
+}
+.img_wrapper:hover{
+   transform: scale(1.2);
+   border: none;
+}
+
+.container { 
+    width: 100%; 
+    min-width: 250px; 
+    max-width: 80%; 
+    margin: 0 auto; 
+    height: 1000px; 
+    padding: 30px 0px; 
+    justify-content:：center;  
+}
+.sepia img{
+  filter: sepia(1);
+  }
+
+.sepia img:hover{
+  filter:none;
+}
+.h1{
+  font-family: 'cwTeXMing', serif;
+  font-weight: bold;
+}
+
+.flex-text {
+    letter-spacing: 2px;
+    line-height: 1.8;
+    text-indent: 50px;
+    color: rgb(36, 23, 5);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.flex-text_s {
+    color: rgb(36, 23, 5);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    float: right;
+}
+
+/* 劇情大綱 */
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width:275px;
+    height: 350px;
+    border-width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    padding-right: 30px;
+    padding-top: 10px;
+    flex-direction: row;
+    
+}
+
+.box img {
+    display: block;
+    /* width: 100%; */
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    transition: all 0.6s;
+    flex-direction: row;
+    box-shadow:10px 10px 7px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover img {
+    width: 100%;
+    transform: scale(1.5);
+    overflow:hidden;
+    vertical-align: middle;
+    
+}
+
+.box:hover .box-hover-text {
+    display: block;
+} 
+
+.box .box-hover-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background-color: rgba(0,0,0, 0.7);
+    justify-content: center;
+}
+
+.box .box-body {
+    color: #fff;
+}
+  
+h2.box-body {
+    font-size: 36px;
+    padding-top: 30px;
+    padding-left: 15px;
+    text-align: left;
+}
+  
+p.box-body {
+    padding: 10px;
+    line-height: 2em;
+}
+
+.box .box-see-more {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #cedbdc;
+    position: absolute;
+    padding-right: 0;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.box-see-more a {
+    text-decoration: none;
+    color: #000;
+}
+
+.box-see-more a:hover {
+    color: #69868a;
+}
+
+.container_foot {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, .3);
+    min-height: 100px;
+    margin-bottom: 0;
+    text-align: justify;
+    justify-content:center;
+    align-self:center;
+}
+
+.footer{
+  height: 200px;
+  background-color: rgb(25, 18, 18);
+  align-items: center;
+  position:relative;
+  
+}
+
+.footer img{
+  padding-top: 25px;
+  width: 150px;
+  /* margin-top: 20px; */
+  /* align-items: center;
+  justify-items: center;
+  position: absolute;
+  margin-left: 44%; */
+  display:block; 
+  margin:auto;
+}
+
+.footer p{
+  color:rgba(255, 255, 255, 0.384);
+  text-align: center;
+  float: none;
+  padding-top: 5px;
+  /* margin-left: 35%; */
+  font-size: 10px;
+}
