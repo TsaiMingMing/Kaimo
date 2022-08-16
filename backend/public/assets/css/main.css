@@ -1,0 +1,26 @@
+.vh100{
+    height:84vh;
+    overflow: hidden;
+}
+
+
+.mainView {
+    text-align: center;
+    margin-top: 45vh;
+    transform: translateY(-50%);
+    
+}
+
+.mainView h2{
+    position: relative;
+    font-size: 25px;
+    font-weight: 400;
+    color:#757575;
+    line-height: 35px;
+    
+}
+
+.mainView img{
+    height:300px;
+}
+
