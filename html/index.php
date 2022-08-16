@@ -1,11 +1,21 @@
+<?php
+include '../php/news.php';
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>凱茂資訊 KAIMAU CORP.</title>
+    <title>楷模資訊 KAIMO CORP.</title>
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -32,7 +42,7 @@
 <body>
 
 
-    <title>凱茂資訊</title>
+    <title>楷模資訊</title>
 
     </head>
 
@@ -50,16 +60,16 @@
 
                 <div class="wapperContentWord">
                     <a href="./index.php">HOME</a><br>
-                    <a href="./aboutus.php">ABOUT</a><br>
+                    <a href="./aboutus.html">ABOUT</a><br>
                     <a href="./news.php">NEWS</a><br>
-                    <a href="./contact.php">CONTACT</a>
+                    <a href="./contact.html">CONTACT</a>
                 </div>
             </div>
         </div>
 
 
         <div>
-            <h2 class="h2intro">Welcome To KAIMAU.</h2>
+            <h2 class="h2intro">Welcome To KAIMO.</h2>
         </div>
         <div class="indexanimate">
             <div class="overlay"></div>
@@ -77,11 +87,10 @@
 
         <div class="introContent">
             <div data-aos="fade-up">
-                <h2 class="h2intro01">Take KAIMAU,<br>Take the Future.</h2>
-                <h2 class="h2intro02">凱茂資訊</h2>
+                <h2 class="h2intro01">Take KAIMO,<br>Take the Future.</h2>
+                <h2 class="h2intro02">楷模系統</h2>
             </div>
         </div>
-
 
         <!-- 服務項目 -->
         <div class="container-fluid indexService">
@@ -91,9 +100,8 @@
                         <div class="ServiceContent">
                             <h1 class="indexh1">WHAT WE<br>DO.
                                 <h2 class="indexh2">服務項目</h2>
-                                <p class="indexp">青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
-                                </p>
-                                <button class="roundbutton" onclick="window.location.href='./Words.html'">查看更多</button>
+                                <p class="indexp"></p>
+                                <button class="roundbutton" onclick="window.location.href='./news.php'">查看更多</button>
                         </div>
                         <div id="Service01" class="indexContent">
                             <img class="indexicon" src="../img/index/icon01.png">
@@ -103,7 +111,7 @@
                         <div id="Service02" class="indexContent">
                             <img class="indexicon" src="../img/index/icon02.png">
                             <h3 class="indexh3">雲端銷售服務</h3>
-                            <p class="indexp">凱茂資訊為微軟的雲端服務供應商(CSP)，提供Azure、O365、M365、私有雲、混合雲、備份雲的規劃、導入與教育訓練，整合企業內外的Web
+                            <p class="indexp">楷模資訊為微軟的雲端服務供應商(CSP)，提供Azure、O365、M365、私有雲、混合雲、備份雲的規劃、導入與教育訓練，整合企業內外的Web
                                 AP及應用。</p>
                         </div>
                         <div id="Service03" class="indexContent">
@@ -142,51 +150,89 @@
         <div class="container-fluid indexNews">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-7 d-flex" style="background-color:#f3f3f3; height:400px; margin-top: 100px">
-                        <iframe width="1200" height="400" src="https://www.youtube.com/embed/nlkerGjP-xw?autoplay=1&rel=0&mute=1" title="ASUS ExpertCenter 商用桌上型電腦首選" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- <img class = "show" src="../img/index/index-01.png" style = "width:100%; object-fit: contain;"> -->
+                        <iframe width="800" height="400" src="https://www.youtube.com/embed/5Y1GpL768Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div data-aos="fade-left" class="col-lg-5">
                         <div style="padding:80px; margin-top: 20px;margin-bottom: 10px;">
                             <h1 class="indexh1">WHAT's<br>NEWS.
                                 <h2 class="indexh2">最新消息</h2>
                                 <p class="indexp"></p>
-                                <button class="roundbutton" onclick="window.location.href='./Words.html'">查看更多</button>
+                                <button class="roundbutton" onclick="window.location.href='./news.php'">查看更多</button>
                         </div>
                     </div>
                 </div>
-
+                
+                
                 <div class="album">
-
-
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-                        <?php
-                        include '../php/newsql.php';
+                        <div class="col">
+                            <div class="card shadow-sm px-3 py-2" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-body">
+                                    <h3 class="indexh3">
+                                        <?php
+                                        echo $title1;
+                                        ?>
+                                    </h3>
+                                    <hr>
+                                    <p class="indexp2">
+                                        <?php
+                                        echo $content1;
+                                        ?>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
 
-                        $sql = "SELECT * FROM news LIMIT 3";
-                        $result = mysqli_query($con, $sql);
+                                        <!-- <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">查看更多</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm px-3 py-2" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-body">
+                                    <h3 class="indexh3"><?php
+                                                        echo $title2;
+                                                        ?></h3>
+                                    <hr>
+                                    <p class="indexp2">
+                                        <?php
+                                        echo $content2;
+                                        ?>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
 
-                        while ($row = $result->fetch_assoc()) {
-                            echo    "<div class='col'>
-                                        <div class='card shadow-sm px-3 py-2' data-aos='fade-up' data-aos-delay='100'>
-                                            <div class='card-body'>
-                                                <h3 class='indexh3'>$row[title]</h3>
-                                                <hr>
-                                                <p class='indexp2'>
-                                                    $row[content]
-                                                </p>
-                                                <div class='d-flex justify-content-between align-items-center'>
-                                                    <small class='smallDate'>2020-20-20</small>
-                                                    <div class='btn-group'>
-                                                        <button type='button' class='btn btn-sm btn-outline-secondary'>查看更多</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>";
-                        }
+                                        <!-- <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">查看更多</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm px-3 py-2" data-aos="fade-up" data-aos-delay="300">
+                                <div class="card-body">
+                                    <h3 class="indexh3"><?php
+                                                        echo $title3;
+                                                        ?></h3>
+                                    <hr>
+                                    <p class="indexp2">
+                                        <?php
+                                        echo $content3;
+                                        ?>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
 
-
-                        ?>
+                                        <!-- <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">查看更多</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -198,17 +244,22 @@
             <div class="row">
                 <div class="col-lg-6 d-flex align-items-center justify-content-center" style="background-color: #ffffff; ">
                     <div data-aos="fade-right" class="m-5 p-4" style="width: 500px;">
-                        <h1 class="indexh1">ABOUT<br>US.
-                            <h2 class="indexh2">關於我們</h2>
-                            <p class="indexp">青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
-                            </p>
-                            <button class="roundbutton" onclick="window.location.href='./Words.html'">認識凱茂</button>
-                    </div>
 
+                        <h1 class="indexh1">ABOUT<br>US.</h1>
+                        <h2 class="indexh2">關於我們</h2>
+                        <p class="indexp">
+                                永遠站在客戶角度設想，帶給品牌形象更高的價值。以品牌定位規劃最佳方案，提供最高質感設計為使命，與您並肩拓展品牌視野。
+                                <br><br>    
+                                Make Everything, More Valuable, With Great Ideas.
+                            </p>
+                        <button class="roundbutton" onclick="window.location.href='./aboutus.html'">認識楷模</button>
+
+
+                    </div>
                 </div>
 
                 <!-- 到時候替換動畫效果 -->
-                <div class="col-lg-6 d-flex indexAbout">
+                <div class="col-lg-6 indexAbout">
                 </div>
             </div>
 
@@ -220,15 +271,15 @@
         <footer>
             <div class="container-fluid footer">
                 <div style="text-align:center; width:100% ;margin:auto;">
-                    <img src="../images/logo-gray.png" style="height: 40px; margin:20px">
+                    <img src="../img/logo/logo-gray.png" style="height: 40px; margin:20px">
                     <hr>
-                    <a href="./index.html" class="m-2">HOME</a>
+                    <a href="./index.php" class="m-2">HOME</a>
                     <a href="./aboutus.html" class="m-2">ABOUT</a>
-                    <a href="./news.html" class="m-2">NEWS</a>
+                    <a href="./news.php" class="m-2">NEWS</a>
                     <a href="./contact.html" class="m-2">CONTACT</a>
                     <br>
                     <br>
-                    <p style="font-size:14px; color:#a2a2a2">&copy; 2022 凱茂資訊 </p>
+                    <p style="font-size:14px; color:#a2a2a2">&copy; 2022 楷模資訊 </p>
                 </div>
             </div>
         </footer>
@@ -239,7 +290,7 @@
     </body>
 
     <script src="../js/app.js"></script>
-    <script src="../js/navbar.js"></script>
+    <script src="../js/navbarIndex.js"></script>
 
     <script>
         AOS.init();

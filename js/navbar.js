@@ -1,4 +1,8 @@
 $(function () {
+
+    if ($(document).scrollTop() < 450) {
+        $('.menu-btn span').css('border-color', 'rgb(255, 255, 255)');
+    }
     $('#active').on('click', function () {
         // console.log($('#active').prop('checked'));
         if ($('#active').prop('checked') == false) {
@@ -22,7 +26,7 @@ $(function () {
 
 
 $(window).on("scroll touchmove", function () {
-    if ($(document).scrollTop() < 450) {
+    if ($(document).scrollTop() < 420) {
         $('.menu-btn span').css('border-color', 'rgb(255, 255, 255)');
     }
     else {
